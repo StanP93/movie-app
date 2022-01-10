@@ -1,6 +1,14 @@
-.myMovie {
-    display: flex;
+.movie {
     width: 300px;
-    height: 200px;
-    background-color: aqua;
+    margin: 15px;
+    background-color:darkgoldenrod;
+}
+h3 {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+img {
+    max-width: 100%;
 }
