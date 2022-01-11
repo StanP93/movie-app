@@ -1,14 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 .movie {
     width: 300px;
     margin: 15px;
     background-color:darkgoldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
 }
 h3 {
     margin: 0;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 p {
     margin: 0;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 img {
     max-width: 100%;
+}
+.movie_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.movie_overview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    transform: translateY(100%);
+    background-color: bisque;
+    color: black;
+    transition: transform 1s ease-in-out;
+}
+h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.movie:hover .movie_overview {
+    transform: translateY(0);
 }

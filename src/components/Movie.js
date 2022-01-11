@@ -6,9 +6,13 @@ const Movie = ({title, poster_path, overview, vote_average}) => {
     return (
         <div className={classes.movie}>
             <img src={API_IMAGE + poster_path} alt={title}/>
-            <div>
+            <div className={classes.movie_info}>
                 <h3>{title}</h3>
                 <p>{vote_average}</p>
+            </div>
+            <div className={classes.movie_overview}>
+                <h2>Overview:</h2>
+                <p>{overview}</p>
             </div>
         </div>
     )
