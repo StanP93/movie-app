@@ -5,7 +5,6 @@
     background-color:darkgoldenrod;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -43,7 +42,7 @@ img {
 .movie_info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin: 10px 0;
 }
 .movie_overview {

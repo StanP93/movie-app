@@ -28,9 +28,22 @@ function App() {
       };
     setSearch('')
     }
-
+    const getSorted = (type) => {
+      const movmov = [...movies];
+      if(type === 'vote') {
+        movmov.sort((a,b)=>a.vote_average<b.vote_average?1:-1);
+      setMovies(movmov)  
+      } else {
+        movmov.sort((a,b)=>a.title>b.title?1:-1);
+        setMovies(movmov)
+      }
+      
+      console.log(movmov);
+    }
   return (
     <div className="App">
+      <button onClick={()=>getSorted('vote')}>Sort by vote</button>
+      <button onClick={()=>getSorted('name')}>Sort by name</button>
       <form onSubmit={handleOnSubmit}>
         <div className="Header">
           <input className='search' placeholder='Search...' value={search} onChange={(e) => setSearch(e.target.value)}></input>
