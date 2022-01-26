@@ -28,29 +28,27 @@ function App() {
       };
     setSearch('')
     }
-    const getSorted = (type) => {
-      const movmov = [...movies];
-      if(type === 'vote') {
-        movmov.sort((a,b)=>a.vote_average<b.vote_average?1:-1);
-      setMovies(movmov)  
-      } else {
-        movmov.sort((a,b)=>a.title>b.title?1:-1);
-        setMovies(movmov)
-      }
-      
-      console.log(movmov);
+  const getSorted = (type) => {
+    const moviesArr = [...movies];
+    if(type === 'vote') {
+      moviesArr.sort((a,b)=>a.vote_average<b.vote_average?1:-1);
+      setMovies(moviesArr)  
+    } else {
+      moviesArr.sort((a,b)=>a.title>b.title?1:-1);
+      setMovies(moviesArr)
     }
+}
   return (
     <div className="App">
-      <button onClick={()=>getSorted('vote')}>Sort by vote</button>
-      <button onClick={()=>getSorted('name')}>Sort by name</button>
-      <form onSubmit={handleOnSubmit}>
+      <form onSubmit={handleOnSubmit} style={{position:'relative'}}>
+      <button onClick={()=>getSorted('vote')} style={{left: '20%'}}>Sort by vote</button>
+      <button onClick={()=>getSorted('name')} style={{left: '10%'}}>Sort by name</button>
         <div className="Header">
           <input className='search' placeholder='Search...' value={search} onChange={(e) => setSearch(e.target.value)}></input>
         </div>  
       </form>
       <div className="Content">
-        {movies.map((movie)=>(
+        {movies.length == 0 ? <h1>Enter a valid value!</h1>:movies.map((movie)=>(
           <Movie {...movie} key={movie.id}/>
         ))}
       </div>
